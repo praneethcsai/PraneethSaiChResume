@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Praneeth Sai Chunduru – Full-stack Python developer with about 4 years in data engineering, AI/RAG systems and multi-tenant SaaS.">
+<title>Praneeth Sai Chunduru – Resume</title>
+<!-- Link preview when the page is shared on LinkedIn, WhatsApp etc. Replace your-username. -->
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Praneeth Sai Chunduru – Full-stack Python developer">
+<meta property="og:description" content="About 4 years in data engineering, AI/RAG systems and multi-tenant SaaS.">
+<meta property="og:image" content="https://your-username.github.io/images/cover.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #F7F9FB; --sheet: #FFFFFF; --ink: #17212B; --muted: #586879;
+    --rule: #DCE3EA; --accent: #1F5FA8; --accent-soft: #E7EFF9; --chip: #EEF2F6;
+    color-scheme: light;
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #0E141B; --sheet: #151D26; --ink: #E6ECF2; --muted: #9AAABB;
+      --rule: #273341; --accent: #7FB2EE; --accent-soft: #1B2B3F; --chip: #1E2834;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #0E141B; --sheet: #151D26; --ink: #E6ECF2; --muted: #9AAABB;
+    --rule: #273341; --accent: #7FB2EE; --accent-soft: #1B2B3F; --chip: #1E2834;
+    color-scheme: dark;
+  }
+  html { scroll-padding-top: env(safe-area-inset-top, 0px); }
+  *, *::before, *::after { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--paper); color: var(--ink);
+    font-family: "Schibsted Grotesk", "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+    font-size: 1rem; line-height: 1.55; -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent); text-underline-offset: 3px; }
+  a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+
+  .sheet {
+    max-width: 70rem; margin: clamp(0px, 3vw, 2.5rem) auto;
+    background: var(--sheet); border: 1px solid var(--rule); border-radius: 14px; overflow: hidden;
+  }
+
+  header { border-bottom: 1px solid var(--rule); position: relative; }
+
+  /* Cover photo: images/cover.jpg (falls back to a dot pattern) */
+  .cover {
+    position: relative; width: 100%; aspect-ratio: 4 / 1; min-height: 8.5rem; max-height: 17rem;
+    background-color: var(--accent-soft);
+    background-image: radial-gradient(color-mix(in srgb, var(--accent) 30%, transparent) 1.2px, transparent 1.5px);
+    background-size: 18px 18px; overflow: hidden;
+  }
+  .cover img {
+    position: absolute; inset: 0; width: 100%; height: 100%; display: block;
+    object-fit: cover; object-position: var(--cover-focus, center);
+  }
+  .intro { padding: 0 clamp(1.25rem, 5vw, 3.5rem) clamp(1.5rem, 4vw, 2.5rem); }
+
+  /* Profile photo: images/profile.jpg (falls back to initials) */
+  .avatar {
+    --size: clamp(7rem, 22vw, 10.5rem);
+    position: relative; width: var(--size); aspect-ratio: 1; border-radius: 50%;
+    margin: calc(var(--size) / -2) 0 1.1rem;
+    background: var(--accent); color: var(--sheet);
+    display: grid; place-items: center; overflow: hidden;
+    font-size: calc(var(--size) / 3); font-weight: 800; letter-spacing: -0.03em;
+    border: 5px solid var(--sheet); z-index: 1;
+  }
+  .avatar img {
+    position: absolute; inset: 0; width: 100%; height: 100%;
+    object-fit: cover; object-position: var(--avatar-focus, center 30%);
+  }
+  .name {
+    font-size: clamp(2.3rem, 7vw, 3.75rem); font-weight: 800;
+    letter-spacing: -0.035em; line-height: 1; margin: 0 0 0.9rem; text-wrap: balance;
+  }
+  .role { font-size: clamp(1.05rem, 2.6vw, 1.3rem); font-weight: 600; margin: 0 0 0.3rem; }
+  .role-sub { color: var(--muted); margin: 0; max-width: 52ch; }
+  .contact {
+    list-style: none; padding: 0; margin: 1.5rem 0 0;
+    display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; font-size: 0.95rem;
+  }
+  .contact li { display: flex; align-items: center; gap: 0.45rem; }
+  .contact svg { width: 1rem; height: 1rem; flex: none; stroke: var(--muted); }
+  .actions {
+    position: absolute; top: clamp(0.75rem, 2vw, 1.25rem); right: clamp(0.75rem, 2vw, 1.25rem);
+    display: flex; gap: 0.5rem; z-index: 2;
+  }
+  .actions button {
+    font: inherit; font-size: 0.85rem; font-weight: 600; color: var(--ink);
+    background: color-mix(in srgb, var(--sheet) 88%, transparent);
+    -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+    border: 1px solid var(--rule); border-radius: 999px;
+    padding: 0.4rem 0.85rem; cursor: pointer;
+  }
+  .actions button:hover { border-color: var(--muted); }
+
+  .body { display: grid; grid-template-columns: 1fr; }
+  @media (min-width: 56rem) {
+    .body { grid-template-columns: minmax(0, 1fr) 20rem; }
+    aside { border-left: 1px solid var(--rule); }
+  }
+  main, aside { padding: clamp(1.5rem, 4vw, 2.75rem) clamp(1.25rem, 5vw, 3.5rem); }
+  aside { background: color-mix(in srgb, var(--paper) 55%, var(--sheet)); }
+  @media (min-width: 56rem) { aside { padding-left: 2rem; padding-right: 2rem; } }
+
+  section + section { margin-top: 2.75rem; }
+  h2 { font-size: 1.3rem; font-weight: 700; letter-spacing: -0.01em; margin: 0 0 1rem; }
+  aside h2 { font-size: 1.1rem; }
+  p { margin: 0 0 0.75rem; max-width: 68ch; }
+
+  /* Employer timeline */
+  .timeline { list-style: none; margin: 0; padding: 0; }
+  .employer {
+    position: relative; padding-left: 1.5rem; padding-bottom: 2.25rem;
+    border-left: 2px solid var(--rule);
+  }
+  .employer:last-child { padding-bottom: 0; border-left-color: transparent; }
+  .employer::before {
+    content: ""; position: absolute; left: -7px; top: 0.4rem;
+    width: 12px; height: 12px; border-radius: 50%;
+    background: var(--accent); border: 2px solid var(--accent);
+  }
+  .emp-head {
+    display: flex; flex-wrap: wrap; justify-content: space-between;
+    gap: 0.15rem 1rem; align-items: baseline; margin-bottom: 1rem;
+  }
+  .emp-head h3 { font-size: 1.2rem; margin: 0; font-weight: 700; }
+  .when { font-size: 0.9rem; color: var(--muted); white-space: nowrap; }
+
+  .project { padding: 1.1rem 0 1.25rem; border-top: 1px solid var(--rule); }
+  .project:first-of-type { border-top: 0; padding-top: 0; }
+  .project h4 { font-size: 1.05rem; margin: 0 0 0.2rem; font-weight: 700; }
+  .project .desc { color: var(--muted); font-size: 0.95rem; margin-bottom: 0.7rem; }
+  .project ul { margin: 0; padding-left: 1.1rem; }
+  .project li { margin-bottom: 0.45rem; max-width: 66ch; }
+  .project li::marker { color: var(--accent); }
+
+  details.stack { margin-top: 0.8rem; }
+  details.stack summary {
+    cursor: pointer; font-size: 0.88rem; font-weight: 600; color: var(--accent);
+    list-style: none; display: inline-flex; align-items: center; gap: 0.35rem;
+  }
+  details.stack summary::-webkit-details-marker { display: none; }
+  details.stack summary::before {
+    content: "+"; display: inline-grid; place-items: center;
+    width: 1.1rem; height: 1.1rem; border-radius: 4px; background: var(--accent-soft); font-size: 0.85rem;
+  }
+  details.stack[open] summary::before { content: "−"; }
+
+  .tags { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 0.6rem; }
+  .tag { font-size: 0.8rem; background: var(--chip); color: var(--muted); border-radius: 6px; padding: 0.15rem 0.5rem; }
+  .competencies .tag { background: var(--accent-soft); color: var(--ink); font-size: 0.85rem; padding: 0.25rem 0.6rem; }
+
+  .skill-group + .skill-group { margin-top: 1.1rem; }
+  .group-label { font-size: 0.9rem; font-weight: 600; margin: 0 0 0.1rem; }
+  .group-label + .tags { margin-top: 0.35rem; }
+
+  .plain { list-style: none; padding: 0; margin: 0; font-size: 0.95rem; }
+  .plain strong { display: block; }
+  .plain span { color: var(--muted); font-size: 0.9rem; }
+
+  footer { text-align: center; color: var(--muted); font-size: 0.85rem; padding: 1.25rem 1rem 2rem; }
+
+  @media (max-width: 40rem) {
+    .sheet { border-radius: 0; border-left: 0; border-right: 0; margin-top: 0; }
+    .cover { aspect-ratio: 3 / 1; }
+    .actions button { font-size: 0.8rem; padding: 0.35rem 0.7rem; }
+    .contact { flex-direction: column; gap: 0.5rem; }
+    .employer { padding-left: 1.1rem; }
+  }
+
+  @media print {
+    :root { --paper: #fff; --sheet: #fff; --ink: #000; --muted: #444; --rule: #ccc; --accent: #1F5FA8; --accent-soft: #eef2f6; --chip: #f1f3f5; padding: 0; }
+    body { font-size: 9.5pt; }
+    .sheet { margin: 0; border: 0; border-radius: 0; max-width: none; }
+    .actions, footer, details.stack summary, .cover, .avatar.no-photo { display: none; }
+    .avatar { --size: 5.5rem; margin: 0 0 0.8rem; border: 0; }
+    .intro { padding-top: 0; }
+    details.stack > .tags { display: flex !important; }
+    .body { grid-template-columns: minmax(0, 1fr) 14rem; }
+    aside { border-left: 1px solid var(--rule); background: none; }
+    a { color: inherit; text-decoration: none; }
+    .project { break-inside: avoid; }
+    @page { margin: 12mm; }
+  }
+</style>
+</head>
+<body>
+<div class="sheet">
+  <header>
+    <div class="actions">
+      <button type="button" id="themeBtn" aria-label="Switch colour theme">Dark mode</button>
+      <button type="button" id="printBtn">Print / save PDF</button>
+    </div>
+    <div class="cover">
+      <img src="images/cover.jpg" alt="">
+    </div>
+    <div class="intro">
+    <div class="avatar">
+      <span aria-hidden="true">PS</span>
+      <img src="images/profile.jpg" alt="Photo of Praneeth Sai Chunduru">
+    </div>
+    <h1 class="name">Praneeth Sai Chunduru</h1>
+    <p class="role">Full-stack Python developer</p>
+    <p class="role-sub">About 4 years in data engineering, AI/RAG systems and multi-tenant SaaS.</p>
+    <ul class="contact">
+      <li>
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
+        Hyderabad, India
+      </li>
+      <li>
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+        <a href="mailto:praneeth.c.sai@gmail.com">praneeth.c.sai@gmail.com</a>
+      </li>
+      <li>
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+        <a href="tel:+917382983944">+91 73829 83944</a>
+      </li>
+    </ul>
+    </div>
+  </header>
+
+  <div class="body">
+    <main>
+      <section aria-labelledby="summary">
+        <h2 id="summary">Summary</h2>
+        <p>Results-driven Python developer with 4 years of experience across data engineering, ETL pipelines, system integration and multi-tenant SaaS platforms. I build secure, scalable backends with FastAPI and PostgreSQL, with hands-on expertise in retrieval-augmented generation (RAG), vector databases, LLM integration and AI/ML models for anomaly detection and intelligent data processing.</p>
+        <p>At SRS, I work across two production platforms: Luceford, a fintech debt-settlement and collections platform, and the SRS Conversational AI Assistant, a multi-tenant RAG chatbot platform. The work spans React/TypeScript frontends, PII encryption, RBAC, microservice architecture and CI/CD on AWS.</p>
+        <div class="tags competencies" aria-label="Core competencies">
+          <span class="tag">RAG and vector search</span><span class="tag">LLM integration and prompt engineering</span><span class="tag">FastAPI and REST API design</span><span class="tag">Multi-tenant SaaS architecture</span><span class="tag">RBAC and application security</span><span class="tag">PostgreSQL and pgvector</span><span class="tag">React and TypeScript</span><span class="tag">Data engineering and ETL</span><span class="tag">CI/CD and AWS</span><span class="tag">Automated testing (pytest)</span>
+        </div>
+      </section>
+
+      <section aria-labelledby="experience">
+        <h2 id="experience">Experience</h2>
+        <ol class="timeline">
+          <li class="employer">
+            <div class="emp-head">
+              <h3>SRS Business Solutions</h3>
+              <span class="when">June 2026 – present</span>
+            </div>
+
+            <div class="project">
+              <h4>Luceford</h4>
+              <p class="desc">Multi-tenant fintech debt-settlement and collections platform (internal codename Beacon 2.0)</p>
+              <ul>
+                <li>Core contributor on a platform managing the full client lifecycle: lead intake, creditor negotiation and settlement, ACH collection from client escrow accounts and RPPS disbursement to creditors, under SOX/ICFR-grade financial controls, audit logging and multi-tenancy.</li>
+                <li>Third-highest contributor on a ~10-person engineering team (70 of 551 commits, ~13%), active across nearly the entire ~2-month build (Jul–Sep 2026). The platform spans 34 backend domain modules (~50,800 LOC), ~31,400 lines of backend tests and 6 frontend SPAs (~342 files) sharing a common component package.</li>
+                <li>Built the self-service lead portal end to end, including its approval gate and reporting.</li>
+                <li>Built client portal messaging with real email delivery, automated requests, search and attachments.</li>
+                <li>Built the Compliance Officer Portal: staff training tracking, licensure management, document review (shared reusable upload component, dynamic category and proof-type rendering, per-document approval), Lead ID search, review-queue sorting and role invitations. Resolved segregation-of-duties access-control violations for users holding overlapping Counselor and Compliance Officer roles.</li>
+                <li>Implemented SSN/PII field-level encryption (Fernet) and staff Employee ID handling to protect sensitive client and staff data.</li>
+                <li>Led a microservice extraction-and-reintegration effort: split the client-portal backend into an independent service with bidirectional sync, then merged it back into the monolith along with the corresponding frontend split.</li>
+                <li>Fixed staff/client login-collision bugs caused by shared phone numbers across the authentication system.</li>
+                <li>Repeatedly resolved Alembic migration-chain conflicts across the platform’s 182 migrations, and worked on cron-based payment scheduling tied to state-specific fee formulas.</li>
+                <li>Configured multi-instance PostgreSQL connectivity across AWS EC2 instances (listen_addresses, pg_hba.conf, security groups) and proposed a migration path to Amazon RDS for long-term scalability.</li>
+                <li>Researched the debt-relief domain, including MMI’s DMP enrollment flow, the ACH/disbursement lifecycle (NACHA, RPPS, FairShare, BillerID) and US banking UX standards (NIST 800-63B), to inform platform design.</li>
+              </ul>
+              <details class="stack">
+                <summary>Tech stack</summary>
+                <div class="tags"><span class="tag">Python</span><span class="tag">TypeScript</span><span class="tag">FastAPI</span><span class="tag">SQLAlchemy 2.0</span><span class="tag">Alembic</span><span class="tag">PostgreSQL 16</span><span class="tag">JWT</span><span class="tag">bcrypt</span><span class="tag">Fernet</span><span class="tag">React 19</span><span class="tag">Vite</span><span class="tag">Mantine</span><span class="tag">Docker Compose</span><span class="tag">AWS EC2, ECR</span><span class="tag">GitHub Actions</span></div>
+              </details>
+            </div>
+
+            <div class="project">
+              <h4>SRS Conversational AI Assistant</h4>
+              <p class="desc">Multi-tenant RAG chatbot platform</p>
+              <ul>
+                <li>Production platform giving each tenant an isolated knowledge base, a branded embeddable chat widget and a React 19 / TypeScript admin portal (~32K lines) with role-gated Super Admin, Tenant Admin and Support Agent consoles. A single FastAPI service serves the REST API, portal and widget from one Docker image.</li>
+                <li>Ingestion pipeline for files, URLs and cloud sources: parsing, SHA-256 duplicate detection, structure-aware chunking (~1,500 chars / 300 overlap), embeddings (OpenAI text-embedding-3-small or a local sentence-transformers service) and pgvector storage, with layout-aware PDF parsing (Docling) and OCR (RapidOCR) for scanned documents.</li>
+                <li>Hybrid retrieval combining pgvector cosine similarity with BM25 (tsvector) via Reciprocal Rank Fusion, strictly tenant-scoped, with query reformulation, multi-question splitting, follow-up resolution and 3-tier conversation memory (windowed history, LLM summaries, persisted user facts).</li>
+                <li>Answer quality and safety layers: term-level grounding checks, LLM claim verification with rewrite/reject, prompt-injection and jailbreak defence, and secret/PII output filtering. Sensitive chunks (API keys, SSN, Aadhaar, salary data) are classified at ingestion and excluded from retrieval. Multi-provider LLM layer supporting OpenAI, Azure OpenAI and OpenAI-compatible endpoints.</li>
+                <li>Security and multi-tenancy: server-derived tenant_id enforced on every repository and vector query; RBAC; JWT access tokens with rotating single-use refresh tokens, bcrypt hashing, account lockout, hashed tenant API keys, origin allow-listing, CSP/HSTS headers, SSRF protection, Fernet-encrypted integration credentials and GDPR retention/purge workflows.</li>
+                <li>Source integrations for S3, GCS, Azure Blob, OneDrive, Google Drive, Dropbox, GitHub, Confluence, Jira and Slack with APScheduler-driven scheduled syncs, plus Salesforce and HubSpot CRM export.</li>
+                <li>Live human hand-off: WebSocket agent console with tiered agent eligibility, atomic assignment, shift scheduling and cross-process event fan-out over PostgreSQL LISTEN/NOTIFY; premium speech-to-text / text-to-speech and a LiveKit-streamed photorealistic avatar served by a GPU microservice.</li>
+                <li>Domain assistants: a Finance Assistant with LLM query routing and text-to-SQL (sqlglot validation, read-only database role, per-tenant schema); an HR Knowledge Scope document-classification cascade across 15 categories; plan-based feature flags and 3-layer rate limiting (per-IP, per-user token bucket, DB-backed monthly quota).</li>
+                <li>Engineering scale: ~49K lines of Python across 29 API modules, 55 services and 26 repositories; 100+ Alembic migrations; 130+ test modules with an enforced 80% coverage gate (pytest); multi-stage Docker builds deployed to AWS through GitHub Actions.</li>
+              </ul>
+              <details class="stack">
+                <summary>Tech stack</summary>
+                <div class="tags"><span class="tag">Python 3.11</span><span class="tag">TypeScript</span><span class="tag">FastAPI</span><span class="tag">Uvicorn</span><span class="tag">SQLAlchemy</span><span class="tag">Alembic</span><span class="tag">Pydantic</span><span class="tag">PostgreSQL</span><span class="tag">pgvector</span><span class="tag">OpenAI / Azure OpenAI</span><span class="tag">Docling</span><span class="tag">RapidOCR</span><span class="tag">sentence-transformers</span><span class="tag">WebSockets</span><span class="tag">APScheduler</span><span class="tag">React 19</span><span class="tag">Vite</span><span class="tag">Tailwind CSS</span><span class="tag">shadcn/ui</span><span class="tag">TanStack Query</span><span class="tag">Docker</span><span class="tag">AWS EC2, ECR, RDS, SSM</span><span class="tag">GitHub Actions</span><span class="tag">pytest</span></div>
+              </details>
+            </div>
+          </li>
+
+          <li class="employer">
+            <div class="emp-head">
+              <h3>Inventzo Systems</h3>
+              <span class="when">June 2022 – present</span>
+            </div>
+
+            <div class="project">
+              <h4>SDLC automation, Jira integration and architecture</h4>
+              <ul>
+                <li>Engineered “Story-Assist”, a Python/FastAPI tool that streamlines the SDLC through bulk creation and linking of Jira stories to Epics and Features.</li>
+                <li>Developed a custom version control system for user stories with state management and rollback to protect data integrity during requirement gathering.</li>
+                <li>Automated Jira workflows with backend services for sub-task generation and bidirectional linking, reducing manual admin for the engineering team.</li>
+                <li>Designed and deployed scalable REST APIs with FastAPI and Uvicorn, with robust error handling and debugging protocols.</li>
+                <li>Implemented secure SSO for internal tools across the SDLC platform.</li>
+                <li>Wrote and refined complex SQL queries to manage project metadata and user story history.</li>
+                <li>Integrated a RAG pipeline that generates user stories, acceptance criteria and task descriptions from historical Jira data and requirement documents.</li>
+                <li>Implemented vector-database semantic search to retrieve similar past stories, improving reuse, consistency and accuracy.</li>
+                <li>Built and fine-tuned AI/ML models for requirement analysis, story classification and effort estimation.</li>
+                <li>Developed prompt-engineered LLM workflows that give context-aware story suggestions.</li>
+                <li>Managed end-to-end Git version control for the project, including complex branching strategies and merge-conflict resolution.</li>
+              </ul>
+              <details class="stack">
+                <summary>Tech stack</summary>
+                <div class="tags"><span class="tag">Python</span><span class="tag">NumPy</span><span class="tag">Pandas</span><span class="tag">PostgreSQL</span><span class="tag">Apache Superset</span><span class="tag">Postman</span><span class="tag">AWS</span><span class="tag">FastAPI</span><span class="tag">LLM</span><span class="tag">AI/ML</span><span class="tag">RAG</span><span class="tag">Vector DB</span></div>
+              </details>
+            </div>
+
+            <div class="project">
+              <h4>Python AI/ML developer, data analytics</h4>
+              <p class="desc">Database Access Management (DAM): an auditing and monitoring platform that captures every SQL query, access event and user action across multiple databases</p>
+              <ul>
+                <li>Designed AI-driven dashboards for real-time visualisation and decision support using Dash, Plotly and Panel.</li>
+                <li>Built and deployed ML models to analyse behavioural patterns, detect anomalies and classify user actions from historical logs and real-time query streams.</li>
+                <li>Trained and evaluated supervised Scikit-learn models for event classification and anomaly detection.</li>
+                <li>Engineered automated Pandas/NumPy pipelines to clean, transform and label training data.</li>
+                <li>Developed pytest suites validating ML pipelines, data transformations and dashboard API endpoints.</li>
+                <li>Implemented a RAG framework for natural-language querying of historical database logs and audit trails.</li>
+                <li>Indexed SQL queries, activity logs and access patterns with embeddings for fast similarity search and threat investigation.</li>
+                <li>Used prompt-engineered LLMs to generate insights, anomaly explanations and recommended actions for suspicious behaviour.</li>
+                <li>Enriched ML models with RAG context, improving anomaly detection accuracy and reducing false positives.</li>
+              </ul>
+              <details class="stack">
+                <summary>Tech stack</summary>
+                <div class="tags"><span class="tag">NumPy</span><span class="tag">Pandas</span><span class="tag">Scikit-learn</span><span class="tag">Plotly</span><span class="tag">Dash</span><span class="tag">Panel</span><span class="tag">SQLite</span><span class="tag">SQL Server</span><span class="tag">MySQL</span><span class="tag">pytest</span><span class="tag">AI/ML</span><span class="tag">RAG</span></div>
+              </details>
+            </div>
+
+            <div class="project">
+              <h4>Network discovery tool and password masking application</h4>
+              <ul>
+                <li>Developed a multi-threaded Python network discovery engine to scan, identify and monitor servers, IPs and network resources in real time.</li>
+                <li>Implemented socket-based communication and system-level integrations to gather host and network metadata.</li>
+                <li>Built password masking and encryption with industry-standard cryptographic libraries to protect credentials in storage and transit.</li>
+                <li>Developed the Password Mask Lite browser extension for automated form filling and secure credential handling.</li>
+                <li>Optimised performance with multithreading and asynchronous processing for minimal latency.</li>
+              </ul>
+              <details class="stack">
+                <summary>Tech stack</summary>
+                <div class="tags"><span class="tag">Python</span><span class="tag">SQL</span><span class="tag">Browser extensions</span><span class="tag">Multithreading</span></div>
+              </details>
+            </div>
+          </li>
+        </ol>
+      </section>
+    </main>
+
+    <aside>
+      <section aria-labelledby="skills">
+        <h2 id="skills">Technical skills</h2>
+        <div class="skill-group"><p class="group-label">Languages</p><div class="tags"><span class="tag">Python</span><span class="tag">TypeScript</span><span class="tag">SQL</span><span class="tag">PL/SQL</span></div></div>
+        <div class="skill-group"><p class="group-label">Backend and APIs</p><div class="tags"><span class="tag">FastAPI</span><span class="tag">Flask</span><span class="tag">SQLAlchemy</span><span class="tag">Pydantic</span><span class="tag">Uvicorn</span><span class="tag">REST APIs</span><span class="tag">WebSockets</span><span class="tag">APScheduler</span><span class="tag">Alembic</span><span class="tag">Multiprocessing</span><span class="tag">Multithreading</span></div></div>
+        <div class="skill-group"><p class="group-label">Databases</p><div class="tags"><span class="tag">PostgreSQL</span><span class="tag">pgvector</span><span class="tag">Oracle</span><span class="tag">SQL Server</span><span class="tag">MySQL</span><span class="tag">SQLite</span></div></div>
+        <div class="skill-group"><p class="group-label">AI, ML and NLP</p><div class="tags"><span class="tag">RAG</span><span class="tag">Vector databases</span><span class="tag">Embeddings</span><span class="tag">OpenAI, Azure OpenAI</span><span class="tag">Prompt engineering</span><span class="tag">Hybrid search (BM25 + RRF)</span><span class="tag">Text-to-SQL</span><span class="tag">Docling / OCR</span><span class="tag">Scikit-learn</span><span class="tag">NLP</span></div></div>
+        <div class="skill-group"><p class="group-label">Data engineering and ETL</p><div class="tags"><span class="tag">Informatica PowerCenter</span><span class="tag">ETL pipelines</span><span class="tag">Data integration</span><span class="tag">Pandas</span><span class="tag">NumPy</span><span class="tag">PySpark</span></div></div>
+        <div class="skill-group"><p class="group-label">Frontend</p><div class="tags"><span class="tag">React 19</span><span class="tag">Vite</span><span class="tag">Tailwind CSS</span><span class="tag">shadcn/ui</span><span class="tag">TanStack Query</span><span class="tag">Mantine</span></div></div>
+        <div class="skill-group"><p class="group-label">Security</p><div class="tags"><span class="tag">RBAC</span><span class="tag">JWT</span><span class="tag">bcrypt</span><span class="tag">Fernet</span><span class="tag">SSO</span><span class="tag">Multi-tenant isolation</span><span class="tag">Prompt-injection defence</span><span class="tag">PII filtering</span><span class="tag">Audit logging</span></div></div>
+        <div class="skill-group"><p class="group-label">Integrations</p><div class="tags"><span class="tag">Jira</span><span class="tag">Confluence</span><span class="tag">Slack</span><span class="tag">GitHub</span><span class="tag">Salesforce</span><span class="tag">HubSpot</span><span class="tag">AWS S3</span><span class="tag">Google Cloud Storage</span><span class="tag">Azure Blob</span><span class="tag">OneDrive</span><span class="tag">Google Drive</span><span class="tag">Dropbox</span></div></div>
+        <div class="skill-group"><p class="group-label">Cloud and DevOps</p><div class="tags"><span class="tag">AWS EC2, ECR, RDS, SSM</span><span class="tag">Docker</span><span class="tag">Docker Compose</span><span class="tag">GitHub Actions</span><span class="tag">Git</span></div></div>
+        <div class="skill-group"><p class="group-label">Testing</p><div class="tags"><span class="tag">pytest</span><span class="tag">pytest-cov</span><span class="tag">Postman</span></div></div>
+        <div class="skill-group"><p class="group-label">BI and visualisation</p><div class="tags"><span class="tag">Apache Superset</span><span class="tag">Dash</span><span class="tag">Plotly</span><span class="tag">Panel</span><span class="tag">Recharts</span></div></div>
+        <div class="skill-group"><p class="group-label">Tools and platforms</p><div class="tags"><span class="tag">VS Code</span><span class="tag">Visual Studio</span><span class="tag">MySQL Workbench</span><span class="tag">Microsoft Visio</span><span class="tag">Windows</span><span class="tag">Unix/Linux</span></div></div>
+      </section>
+
+      <section aria-labelledby="research">
+        <h2 id="research">Research and publications</h2>
+        <p>Cross-platform web security solutions using deep learning</p>
+      </section>
+
+      <section aria-labelledby="education">
+        <h2 id="education">Education</h2>
+        <ul class="plain">
+          <li><strong>B.Tech in Computer Science Engineering</strong><span>PES Institute of Technology, Bengaluru</span></li>
+        </ul>
+      </section>
+    </aside>
+  </div>
+</div>
+<footer>Last updated October 2026</footer>
+
+<script>
+  (function () {
+    var btn = document.getElementById('themeBtn');
+    var root = document.documentElement;
+    function current() {
+      var set = root.getAttribute('data-theme');
+      if (set) return set;
+      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+    function label() { btn.textContent = current() === 'dark' ? 'Light mode' : 'Dark mode'; }
+    try {
+      var saved = localStorage.getItem('resume-theme');
+      if (saved === 'dark' || saved === 'light') root.setAttribute('data-theme', saved);
+    } catch (e) {}
+    label();
+    btn.addEventListener('click', function () {
+      var next = current() === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      try { localStorage.setItem('resume-theme', next); } catch (e) {}
+      label();
+    });
+    // Open every tech stack before printing so nothing is hidden on paper
+    var stacks = document.querySelectorAll('details.stack');
+    var prev = [];
+    window.addEventListener('beforeprint', function () {
+      prev = Array.prototype.map.call(stacks, function (d) { return d.open; });
+      stacks.forEach(function (d) { d.open = true; });
+    });
+    window.addEventListener('afterprint', function () {
+      stacks.forEach(function (d, i) { d.open = prev[i]; });
+    });
+    document.getElementById('printBtn').addEventListener('click', function () { window.print(); });
+
+    // If a photo file is missing, fall back to initials / the dot pattern
+    function watch(img, onFail) {
+      if (!img) return;
+      if (img.complete && img.naturalWidth === 0) onFail(img);
+      else img.addEventListener('error', function () { onFail(img); });
+    }
+    watch(document.querySelector('.avatar img'), function (img) {
+      img.parentNode.classList.add('no-photo'); img.remove();
+    });
+    watch(document.querySelector('.cover img'), function (img) { img.remove(); });
+  })();
+</script>
+</body>
+</html>
