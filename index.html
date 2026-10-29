@@ -9,8 +9,8 @@
 <meta property="og:type" content="profile">
 <meta property="og:title" content="Praneeth Sai Chunduru – Full-stack Python developer">
 <meta property="og:description" content="About 4 years in data engineering, AI/RAG systems and multi-tenant SaaS.">
-<meta property="og:url" content="https://praneethcsai.github.io/Resume-PraneethSaiCh/">
-<meta property="og:image" content="https://praneethcsai.github.io/Resume-PraneethSaiCh/images/profile.jpg">
+<meta property="og:url" content="https://praneethcsai.github.io/PraneethSaiChResume/">
+<meta property="og:image" content="https://praneethcsai.github.io/PraneethSaiChResume/images/profile.jpg">
 <script>
   // Apply the saved theme before first paint to avoid a flash
   try {
@@ -178,6 +178,9 @@
 
   footer { text-align: center; color: var(--muted); font-size: 0.85rem; padding: 1.25rem 1rem 2rem; }
 
+  /* QR code to the online version: paper only (images/qr.png) */
+  .qr { display: none; }
+
   @media (max-width: 40rem) {
     .sheet { border-radius: 0; border-left: 0; border-right: 0; margin-top: 0; }
     .cover { aspect-ratio: 3 / 1; }
@@ -191,7 +194,7 @@
   @media print {
     /* Match the dark-theme selectors' specificity so paper is always light */
     :root, :root[data-theme], :root:not([data-theme]) { --paper: #fff; --sheet: #fff; --ink: #111; --muted: #4a4a4a; --rule: #c9ced4; --accent: #1A4E8A; --accent-soft: #fff; --chip: #fff; color-scheme: light; padding: 0; }
-    html { font-size: 10pt; }
+    html { font-size: 9.25pt; }
     body { font-size: 1rem; line-height: 1.3; background: #fff; }
     a { color: inherit; text-decoration: none; }
     p { max-width: none; margin: 0 0 4pt; }
@@ -203,9 +206,13 @@
     .intro { padding: 0; }
     .name { font-size: 22pt; letter-spacing: -0.01em; line-height: 1.1; margin: 0 0 2pt; }
     .role { font-size: 11.5pt; margin: 0; }
-    .role-sub { font-size: 9.5pt; max-width: none; }
-    .contact { flex-direction: row; gap: 0; margin: 5pt 0 0; font-size: 9.5pt; }
-    .contact li + li::before { content: "|"; margin: 0 7pt; color: var(--rule); }
+    .role-sub { font-size: 8.75pt; max-width: none; }
+    .contact { flex-direction: row; gap: 0; margin: 5pt 0 0; font-size: 8.75pt; }
+    .contact li + li::before { content: "|"; margin: 0 5pt; color: var(--rule); }
+    header { position: relative; }
+    /* The QR sits beside the name lines; the contact row runs underneath it */
+    .qr { display: block; position: absolute; top: 0; right: 0; width: 14mm; margin: 0; }
+    .qr img { display: block; width: 100%; height: auto; padding: 1.2mm; background: #fff; image-rendering: pixelated; }
 
     .body { display: block; }
     main, aside { padding: 0; background: none; border: 0; }
@@ -228,16 +235,16 @@
     .employer::before { display: none; }
     .emp-head { margin-bottom: 3pt; flex-wrap: nowrap; }
     .emp-head h3 { font-size: 11pt; }
-    .when { font-size: 9.5pt; }
+    .when { font-size: 8.75pt; }
     .project { padding: 3pt 0 5pt; border-top: 0; }
     .project h4 { font-size: 10.5pt; margin: 0; }
-    .project .desc { font-size: 9.5pt; font-style: italic; margin: 0 0 2pt; }
+    .project .desc { font-size: 8.75pt; font-style: italic; margin: 0 0 2pt; }
     .project ul { padding-left: 12pt; margin-top: 2pt; list-style: disc; }
     .project li { margin-bottom: 1pt; max-width: none; }
     .project li::marker { color: var(--ink); }
 
     /* Always show the tech stack on paper */
-    details.stack { margin-top: 3pt; font-size: 9.5pt; }
+    details.stack { margin-top: 3pt; font-size: 8.75pt; }
     details.stack::details-content { content-visibility: visible; display: block; }
     details.stack > .tags { display: block !important; margin: 0; }
     details.stack > .tags::before { content: "Tech stack: "; font-weight: 600; }
@@ -276,6 +283,9 @@
     </div>
     <!-- To use a cover photo, add images/cover.jpg and put <img src="images/cover.jpg" alt=""> inside this div -->
     <div class="cover"></div>
+    <figure class="qr">
+      <img src="images/qr.png" alt="QR code linking to the online resume">
+    </figure>
     <div class="intro">
     <div class="avatar">
       <span aria-hidden="true">PS</span>

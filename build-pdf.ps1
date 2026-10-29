@@ -26,6 +26,7 @@ Start-Process -FilePath $browser -ArgumentList $chromeArgs -Wait -WindowStyle Hi
   -RedirectStandardError (Join-Path $env:TEMP 'resume-pdf.log')
 
 if (-not (Test-Path $tmp)) { throw 'PDF was not created.' }
-try { Move-Item $tmp $out -Force }
+# Copy rather than move: Move-Item -Force cannot overwrite across drives
+try { Copy-Item $tmp $out -Force -ErrorAction Stop; Remove-Item $tmp }
 catch { throw "Could not replace $out - close it in any PDF viewer and run again." }
 Write-Host "Built $out"
